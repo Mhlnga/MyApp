@@ -11,43 +11,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# -------------------------------------------------
-# Background Image Function
-# -------------------------------------------------
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image:
-        encoded = base64.b64encode(image.read()).decode()
 
-    st.markdown(
-        f"""
-        <style>
-
-        .stApp {{
-            background-image: url("images/airplane.png;base64,{encoded}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-
-        /* White transparent container */
-        [data-testid="stVerticalBlock"] {{
-            background: rgba(255,255,255,0.88);
-            padding: 25px;
-            border-radius: 15px;
-        }}
-
-        h1, h2, h3 {{
-            color: #003366;
-        }}
-
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# Add background
-add_bg_from_local("images/airplane.png")
 
 # -------------------------------------------------
 # Title
